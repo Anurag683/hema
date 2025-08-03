@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Web3Forms Submission Logic (only relevant for service-request.html's form) ---
+    // --- Web3Forms Submission Logic for Service Request Form ---
     const serviceRequestFormElement = document.getElementById('service-request-form') ? document.getElementById('service-request-form').querySelector('form') : null;
     if (serviceRequestFormElement) {
         const submitButton = serviceRequestFormElement.querySelector('button[type="submit"]');
@@ -72,11 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
         serviceRequestFormElement.addEventListener('submit', async function(event) {
             event.preventDefault();
 
-            // !!! IMPORTANT: REPLACE WITH YOUR OWN KEY FROM WEB3FORMS.COM !!!
-            const access_key = "c3cb96ce-eb7e-4952-aa00-3ba1404e8572"; // Placeholder, replace with your actual key
+            // !!! IMPORTANT: REPLACE WITH YOUR OWN KEY FROM WEB3FORMS.COM FOR SERVICE REQUESTS !!!
+            const access_key_service_request = "c3cb96ce-eb7e-4952-aa00-3ba1404e8572"; // Placeholder, replace with your actual key
 
-            if(access_key === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") { // Check against the placeholder
-                alert("Please replace 'YOUR_WEB3FORMS_ACCESS_KEY_HERE' with your actual key from web3forms.com in script.js.");
+            if(access_key_service_request === "c3cb96ce-eb7e-4952-aa00-3ba1404e8572") { // Check against the placeholder
+                alert("Please replace 'c3cb96ce-eb7e-4952-aa00-3ba1404e8572' with your actual Web3Forms access key for service requests in script.js.");
                 return;
             }
 
@@ -84,13 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const formObject = Object.fromEntries(formData.entries());
 
             // Add required properties for Web3Forms
-            formObject.access_key = access_key;
+            formObject.access_key = access_key_service_request;
             formObject.subject = `New Service Request: ${formObject.requested_service || 'Not Specified'}`;
             formObject.from_name = "Plumbing Solutions Service Request";
            
             // For testing purposes, we hardcode the sender email.
-            // In a real application, this would come from a user session.
-            formObject.email = "202117BH166@wilp.bits-pilani.ac.in";
+            formObject.email = "your-receiving-email@example.com"; // Replace with the email where you want to receive service requests
 
             // Handle the city logic correctly
             if (formObject.city_dropdown === 'Other') {
@@ -119,17 +118,76 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
 
                 if (result.success) {
-                    alert("Success! Your service request has been sent.");
+                    alert("Success! Your service request has been sent. We will contact you shortly.");
                     serviceRequestFormElement.reset();
-                    // No need to call toggleOtherCityInput as resetting form handles it
                 } else {
                     console.error("Error from server:", result);
-                    alert(`Error: ${result.message}. Please try again.`);
+                    alert(`Error sending service request: ${result.message}. Please try again.`);
                 }
 
             } catch (error) {
-                console.error("Submission Error:", error);
-                alert("An error occurred while sending the request. Please check the console for details.");
+                console.error("Service Request Submission Error:", error);
+                alert("An error occurred while sending the service request. Please check the console for details.");
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    }
+
+    // --- NEW: Web3Forms Submission Logic for Appointment Form ---
+    const appointmentFormElement = document.getElementById('appointment') ? document.getElementById('appointment').querySelector('form') : null;
+
+    if (appointmentFormElement) {
+        const submitButton = appointmentFormElement.querySelector('button[type="submit"]');
+
+        appointmentFormElement.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            // !!! IMPORTANT: REPLACE WITH YOUR OWN KEY FROM WEB3FORMS.COM FOR APPOINTMENTS !!!
+            const access_key_appointment = "c3cb96ce-eb7e-4952-aa00-3ba1404e8572"; // Get this from Web3Forms.com
+
+            if(access_key_appointment === "YOUR_WEB3FORMS_APPOINTMENT_ACCESS_KEY_HERE") {
+                alert("Please replace 'YOUR_WEB3FORMS_APPOINTMENT_ACCESS_KEY_HERE' with your actual Web3Forms access key for appointments in script.js.");
+                return;
+            }
+
+            const formData = new FormData(appointmentFormElement);
+            const formObject = Object.fromEntries(formData.entries());
+
+            // Add required properties for Web3Forms
+            formObject.access_key = access_key_appointment;
+            formObject.subject = `New Plumbing Appointment: ${formObject.date} at ${formObject.time} for ${formObject.service}`;
+            formObject.from_name = "Plumbing Solutions Appointment Booking";
+            formObject.email = "your-receiving-email@example.com"; // Replace with the email where you want to receive appointments
+
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i>Booking...`;
+
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(formObject)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert("Success! Your appointment has been booked. We will confirm with you shortly.");
+                    appointmentFormElement.reset();
+                } else {
+                    console.error("Error from server:", result);
+                    alert(`Error booking appointment: ${result.message}. Please try again.`);
+                }
+
+            } catch (error) {
+                console.error("Appointment Submission Error:", error);
+                alert("An error occurred while booking the appointment. Please check the console for details.");
             } finally {
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalButtonText;
