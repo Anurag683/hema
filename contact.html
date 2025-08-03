@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Solutions - Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+    <header class="header-bg text-white py-3">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold">PLUMBING SPL.</h1>
+                <p class="ml-2 text-sm text-blue-200">PROFESSIONAL PLUMBERS</p>
+            </div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav class="navbar-bg shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <ul class="flex flex-col md:flex-row justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4 text-white font-medium text-lg">
+                <li><a href="index.html" class="nav-link py-2 px-3">HOME</a></li>
+                <li><a href="about.html" class="nav-link py-2 px-3">ABOUT US</a></li>
+                <li><a href="services.html" class="nav-link py-2 px-3">SERVICES</a></li>
+                <li><a href="prices.html" class="nav-link py-2 px-3">PRICES</a></li>
+                <li><a href="contact.html" class="nav-link py-2 px-3">CONTACT</a></li>
+                <li>
+                    <a href="appointment.html" class="bg-red-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-600 transition duration-300 shadow-md transform hover:scale-105 nav-link">
+                        GET APPOINTMENT
+                    </a>
+                </li>
+                <li><a href="login.html" class="nav-link py-2 px-3">LOGIN</a></li>
+                 <li><a href="register.html" class="nav-link py-2 px-3">REGISTER</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="contact" class="section-content">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Get in Touch With Us</h2>
+            <p class="text-gray-700 mb-6">
+                Have questions or need assistance? Reach out to us using the contact information below.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Our Office</h3>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>56, Building Avenue-06, New York, NY 10001</p>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-phone-alt mr-2 text-blue-600"></i>+1 800-456-7890</p>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 text-blue-600"></i>info@example.com</p>
+                    <p class="text-gray-700"><i class="fas fa-clock mr-2 text-blue-600"></i>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Send Us a Quick Message</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                            <input type="text" id="contact-name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
+                            <input type="email" id="contact-email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-8">
+        <div class="container mx-auto text-center px-4">
+            <p>© 2025 Plumbing Spl. All rights reserved.</p>
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

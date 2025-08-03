@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Solutions - Service Request</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+    <header class="header-bg text-white py-3">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold">PLUMBING SPL.</h1>
+                <p class="ml-2 text-sm text-blue-200">PROFESSIONAL PLUMBERS</p>
+            </div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav class="navbar-bg shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <ul class="flex flex-col md:flex-row justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4 text-white font-medium text-lg">
+                <li><a href="index.html" class="nav-link py-2 px-3">HOME</a></li>
+                <li><a href="about.html" class="nav-link py-2 px-3">ABOUT US</a></li>
+                <li><a href="services.html" class="nav-link py-2 px-3">SERVICES</a></li>
+                <li><a href="prices.html" class="nav-link py-2 px-3">PRICES</a></li>
+                <li><a href="contact.html" class="nav-link py-2 px-3">CONTACT</a></li>
+                <li>
+                    <a href="appointment.html" class="bg-red-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-600 transition duration-300 shadow-md transform hover:scale-105 nav-link">
+                        GET APPOINTMENT
+                    </a>
+                </li>
+                <li><a href="login.html" class="nav-link py-2 px-3">LOGIN</a></li>
+                 <li><a href="register.html" class="nav-link py-2 px-3">REGISTER</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="service-request-form" class="section-content">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Service Request</h2>
+            <p class="text-gray-700 mb-6 text-center">Please provide your details for the <span id="service-title" class="font-semibold text-blue-700"></span>.</p>
+            <form>
+                <input type="hidden" id="requested-service" name="requested_service">
+                <div class="mb-4">
+                    <label for="service-req-name" class="block text-sm font-medium text-gray-700 mb-2 text-left">Full Name</label>
+                    <input type="text" id="service-req-name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="service-req-mobile" class="block text-sm font-medium text-gray-700 mb-2 text-left">Mobile Number</label>
+                    <input type="tel" id="service-req-mobile" name="mobile" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="service-req-address" class="block text-sm font-medium text-gray-700 mb-2 text-left">Address</label>
+                    <textarea id="service-req-address" name="address" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label for="service-req-city-select" class="block text-sm font-medium text-gray-700 mb-2 text-left">City</label>
+                    <select id="service-req-city-select" name="city_dropdown" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="toggleOtherCityInput()">
+                        <option value="">Select your city</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Other">Other (Please specify)</option>
+                    </select>
+                </div>
+                <div id="other-city-input-group" class="mb-4" style="display: none;">
+                    <label for="service-req-city-other" class="block text-sm font-medium text-gray-700 mb-2 text-left">Specify Your City</label>
+                    <input type="text" id="service-req-city-other" name="city_other" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., Visakhapatnam">
+                </div>
+
+                <div class="mb-4">
+                    <label for="service-req-pincode" class="block text-sm font-medium text-gray-700 mb-2 text-left">Pincode</label>
+                    <input type="text" id="service-req-pincode" name="pincode" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                </div>
+                <div class="mb-6">
+                    <label for="service-req-issue-description" class="block text-sm font-medium text-gray-700 mb-2 text-left">Issue Description</label>
+                    <textarea id="service-req-issue-description" name="issue_description" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., Leaky faucet, clogged drain, no hot water..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300">
+                    Submit Request
+                </button>
+            </form>
+            <div class="text-center mt-6">
+                <p class="text-gray-600 text-sm mt-2">
+                    <a href="services.html" class="text-blue-600 hover:underline font-medium">← Back to Services</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-8">
+        <div class="container mx-auto text-center px-4">
+            <p>© 2025 Plumbing Spl. All rights reserved.</p>
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

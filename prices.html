@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Solutions - Prices</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+    <header class="header-bg text-white py-3">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold">PLUMBING SPL.</h1>
+                <p class="ml-2 text-sm text-blue-200">PROFESSIONAL PLUMBERS</p>
+            </div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav class="navbar-bg shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <ul class="flex flex-col md:flex-row justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4 text-white font-medium text-lg">
+                <li><a href="index.html" class="nav-link py-2 px-3">HOME</a></li>
+                <li><a href="about.html" class="nav-link py-2 px-3">ABOUT US</a></li>
+                <li><a href="services.html" class="nav-link py-2 px-3">SERVICES</a></li>
+                <li><a href="prices.html" class="nav-link py-2 px-3">PRICES</a></li>
+                <li><a href="contact.html" class="nav-link py-2 px-3">CONTACT</a></li>
+                <li>
+                    <a href="appointment.html" class="bg-red-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-600 transition duration-300 shadow-md transform hover:scale-105 nav-link">
+                        GET APPOINTMENT
+                    </a>
+                </li>
+                <li><a href="login.html" class="nav-link py-2 px-3">LOGIN</a></li>
+                 <li><a href="register.html" class="nav-link py-2 px-3">REGISTER</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="price" class="section-content">
+            <h2 class="text-3xl font-bold text-blue-800 mb-6">Transparent Pricing & Service Packages</h2>
+            <p class="text-gray-700 mb-6">
+                We believe in clear and upfront pricing. Below are our general service rates and package options.
+                For a precise quote, please contact us for a consultation, as pricing can vary based on the scope and complexity of the job.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Standard Service Rates</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex justify-between items-center">
+                            <span>Diagnostic Fee (initial hour)</span>
+                            <span class="font-bold text-blue-600">$99 <span class="text-gray-500 text-sm">(₹8,266.50)</span></span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Basin/Sink Repair</span>
+                            <span class="font-bold text-blue-600">Starting at $80 <span class="text-gray-500 text-sm">(₹6,680.00)</span></span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Leakage Repair (minor)</span>
+                            <span class="font-bold text-blue-600">Starting at $120 <span class="text-gray-500 text-sm">(₹10,020.00)</span></span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Drain Cleaning (basic)</span>
+                            <span class="font-bold text-blue-600">Starting at $90 <span class="text-gray-500 text-sm">(₹7,515.00)</span></span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Water Tank Inspection</span>
+                            <span class="font-bold text-blue-600">$70 <span class="text-gray-500 text-sm">(₹5,845.00)</span></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Complex Services & Installations</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex justify-between items-align-center">
+                            <span>Plumbing Construction (per point)</span>
+                            <span class="font-bold text-green-600">From $200 <span class="text-gray-500 text-sm">(₹16,700.00)</span></span>
+                        </li>
+                        <li class="flex justify-between items-align-center">
+                            <span>Major Leakage Repair</span>
+                            <span class="font-bold text-green-600">From $300 <span class="text-gray-500 text-sm">(₹25,050.00)</span></span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Water Tank Installation</span>
+                            <span class="font-bold text-green-600">From $400 <span class="text-gray-500 text-sm">(₹33,400.00)</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="text-sm text-gray-500 mt-6">
+                *Note: Prices are estimates and may vary based on specific job requirements, parts needed, and complexity.
+                Emergency service rates may apply outside of regular business hours. Current approximate conversion rate: $1 = ₹83.50.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-8">
+        <div class="container mx-auto text-center px-4">
+            <p>© 2025 Plumbing Spl. All rights reserved.</p>
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

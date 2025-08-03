@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Solutions - Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+    <header class="header-bg text-white py-3">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold">PLUMBING SPL.</h1>
+                <p class="ml-2 text-sm text-blue-200">PROFESSIONAL PLUMBERS</p>
+            </div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav class="navbar-bg shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <ul class="flex flex-col md:flex-row justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4 text-white font-medium text-lg">
+                <li><a href="index.html" class="nav-link py-2 px-3">HOME</a></li>
+                <li><a href="about.html" class="nav-link py-2 px-3">ABOUT US</a></li>
+                <li><a href="services.html" class="nav-link py-2 px-3">SERVICES</a></li>
+                <li><a href="prices.html" class="nav-link py-2 px-3">PRICES</a></li>
+                <li><a href="contact.html" class="nav-link py-2 px-3">CONTACT</a></li>
+                <li>
+                    <a href="appointment.html" class="bg-red-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-600 transition duration-300 shadow-md transform hover:scale-105 nav-link">
+                        GET APPOINTMENT
+                    </a>
+                </li>
+                <li><a href="login.html" class="nav-link py-2 px-3">LOGIN</a></li>
+                 <li><a href="register.html" class="nav-link py-2 px-3">REGISTER</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="register-selection" class="section-content">
+            <h2 class="text-3xl font-bold text-blue-800 mb-8">Join Us Today!</h2>
+            <p class="text-gray-700 mb-10">Choose your role to get started with Plumbing Spl. services.</p>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center justify-center">
+                    <i class="fas fa-user text-6xl text-blue-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">I Need Plumbing Services</h3>
+                    <p class="text-gray-600 mb-6">Register as a user to easily book appointments, track services, and manage your plumbing needs.</p>
+                    <a href="user-register.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                        Register as User
+                    </a>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center justify-center">
+                    <i class="fas fa-hard-hat text-6xl text-green-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">I Offer Plumbing Services</h3>
+                    <p class="text-gray-600 mb-6">Join our team of professional plumbers! Expand your reach and connect with clients in need.</p>
+                    <a href="plumber-register.html" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300 transform hover:scale-105">
+                        Register as Plumber
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-8">
+        <div class="container mx-auto text-center px-4">
+            <p>© 2025 Plumbing Spl. All rights reserved.</p>
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

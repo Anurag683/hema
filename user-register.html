@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbing Solutions - User Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+    <header class="header-bg text-white py-3">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold">PLUMBING SPL.</h1>
+                <p class="ml-2 text-sm text-blue-200">PROFESSIONAL PLUMBERS</p>
+            </div>
+            <div></div>
+        </div>
+    </header>
+
+    <nav class="navbar-bg shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <ul class="flex flex-col md:flex-row justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4 text-white font-medium text-lg">
+                <li><a href="index.html" class="nav-link py-2 px-3">HOME</a></li>
+                <li><a href="about.html" class="nav-link py-2 px-3">ABOUT US</a></li>
+                <li><a href="services.html" class="nav-link py-2 px-3">SERVICES</a></li>
+                <li><a href="prices.html" class="nav-link py-2 px-3">PRICES</a></li>
+                <li><a href="contact.html" class="nav-link py-2 px-3">CONTACT</a></li>
+                <li>
+                    <a href="appointment.html" class="bg-red-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-600 transition duration-300 shadow-md transform hover:scale-105 nav-link">
+                        GET APPOINTMENT
+                    </a>
+                </li>
+                <li><a href="login.html" class="nav-link py-2 px-3">LOGIN</a></li>
+                 <li><a href="register.html" class="nav-link py-2 px-3">REGISTER</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="user-registration-details" class="section-content">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4">User Registration Details</h2>
+            <p class="text-gray-700 mb-8">Please provide your contact and address information.</p>
+
+            <form>
+                <div class="form-field">
+                    <label for="user-details-name">Full Name</label>
+                    <input type="text" id="user-details-name" name="name" required>
+                </div>
+                <div class="form-field">
+                    <label for="user-details-mobile">Mobile Number</label>
+                    <input type="tel" id="user-details-mobile" name="mobile" required>
+                </div>
+                <div class="form-field">
+                    <label for="user-details-address">Address</label>
+                    <textarea id="user-details-address" name="address" rows="3" required></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="user-details-city">City</label>
+                    <input type="text" id="user-details-city" name="city" required>
+                </div>
+                <div class="form-field">
+                    <label for="user-details-pincode">Pincode</label>
+                    <input type="text" id="user-details-pincode" name="pincode" required>
+                </div>
+
+                <button type="submit" class="bg-blue-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300">
+                    Proceed to Account Creation
+                </button>
+            </form>
+
+            <div class="action-links">
+                <p>
+                    Already have an account?
+                    <a href="login.html">Login</a>
+                </p>
+                <p>
+                    <a href="register.html">← Back to Register Options</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-8">
+        <div class="container mx-auto text-center px-4">
+            <p>© 2025 Plumbing Spl. All rights reserved.</p>
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-200"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

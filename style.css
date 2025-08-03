@@ -1,0 +1,169 @@
+/* Custom font for a cleaner look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8; /* Light background for the overall page */
+    color: #334155; /* Default text color */
+}
+/* In a multi-page setup, .section-content active/display: none is less relevant per section,
+   as each HTML file represents one "active" section. However, some sections might still be flexed. */
+.section-content {
+    /* For consistency in styles, if a section is meant to be a card */
+    background-color: #ffffff; /* Explicitly set background for these to white */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    padding: 2.5rem; /* Consistent padding for all sections */
+    margin-bottom: 2rem; /* Spacing between sections */
+}
+
+/* Specific flex centering for certain forms */
+#login.section-content,
+#register-selection.section-content,
+#plumber-registration-form.section-content,
+#user-registration-details.section-content,
+#service-request-form.section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center text within these sections too */
+    max-width: 500px; /* Max width for these forms */
+    margin: auto; /* Center the card on the page */
+}
+
+/* Styles for header and navigation */
+.header-bg {
+    background-color: #1a237e; /* Dark blue from image */
+}
+.navbar-bg {
+    background-color: #283593; /* Slightly lighter blue for nav */
+}
+.nav-link.active {
+    font-weight: 700; /* Bold active nav link */
+    color: #ffffff; /* White color for active nav link */
+    background-color: #3f51b5; /* A slightly darker blue for active state */
+    border-radius: 0.5rem; /* Match other rounded elements */
+    padding: 0.5rem 1rem; /* Add padding for better active visual */
+}
+
+/* Hero section specific styling */
+#home.section-content { /* Targeting the section with id="home" */
+    background-color: #1a237e; /* Dark blue background for hero */
+    color: white; /* White text for contrast */
+    padding: 4rem 2rem; /* Add generous padding */
+    border-radius: 0; /* Remove rounded corners for full width look */
+    box-shadow: none; /* Remove shadow if it's full width */
+    display: flex; /* Use flex for text and image layout */
+    flex-direction: column; /* Stack on small screens */
+    align-items: center;
+    justify-content: center;
+    max-width: none; /* Override max-width for full page hero */
+}
+@media (min-width: 768px) {
+    #home.section-content {
+        flex-direction: row; /* Side-by-side on larger screens */
+        justify-content: space-between;
+    }
+}
+
+/* General form field styling */
+.form-field {
+    margin-bottom: 1.25rem; /* Spacing between form fields */
+    width: 100%; /* Ensure form fields take full width within container */
+    text-align: left; /* Align labels to left within their containers */
+}
+
+.form-field label {
+    display: block; /* Label on its own line */
+    font-size: 0.95rem; /* Slightly smaller font for labels */
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 0.5rem; /* Space between label and input */
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%; /* Inputs take full width of their container */
+    padding: 0.75rem 1rem; /* Consistent padding for all inputs */
+    border: 1px solid #cbd5e0; /* Light gray border */
+    border-radius: 0.375rem; /* rounded-lg */
+    font-size: 1rem;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+.form-field textarea {
+    min-height: 90px; /* Minimum height for textarea */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button[type="submit"] {
+    width: 100%; /* Button takes full width in forms */
+    margin-top: 1.5rem; /* Space above the button */
+}
+
+.action-links {
+    text-align: center; /* Center the links */
+    margin-top: 1.5rem; /* Space above links */
+    font-size: 0.9rem; /* Slightly smaller font for links */
+}
+
+.action-links a {
+    color: #3b82f6; /* Blue-600 */
+    text-decoration: none; /* No underline by default */
+    font-weight: 500;
+}
+.action-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+.action-links p {
+    margin-bottom: 0.5rem; /* Space between the two links */
+}
+
+/* Individual Service Card Style (no background image) */
+#services .grid > div { /* Targeting direct children divs of the grid inside #services */
+    background-color: #ffffff; /* Explicitly white background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #334155; /* Default text color for cards, now on white */
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem; /* Adjusted padding for better fit in grid */
+    border-radius: 0.5rem; /* rounded-lg */
+}
+
+/* Adjust icon and text colors within service cards for readability on a white background */
+#services .grid > div .fa-solid,
+#services .grid > div .fa-brands,
+#services .grid > div .fa-regular {
+    color: #3f51b5; /* Changed to a dark blue for icons */
+}
+#services .grid > div h3 {
+    color: #283593; /* Changed to a darker blue for headings */
+}
+#services .grid > div p {
+    color: #546e7a; /* Changed to a dark gray for paragraphs */
+}
+
+/* Responsive adjustments for general form fields */
+@media (max-width: 768px) {
+    .section-content {
+        padding: 1.5rem; /* Reduce padding on smaller screens */
+    }
+    .form-field {
+        margin-bottom: 1rem;
+    }
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+        padding: 0.6rem 0.8rem;
+    }
+    button[type="submit"] {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+    .action-links {
+        margin-top: 1rem;
+    }
+}
